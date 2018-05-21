@@ -43,7 +43,7 @@ pipeline {
           echo 'Test: OK'
         }
         cleanup {
-          sh 'pm2 stop all'
+          sh 'npm stop'
         }
       }
     }
