@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Pre-check') {
       steps {
-        sh 'npm -v'
+        sh '/usr/local/bin/npm -v'
       }
       post {
         failure {

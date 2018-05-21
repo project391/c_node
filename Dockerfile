@@ -7,6 +7,7 @@ RUN \
   rm -rf /var/cache/apk/*
 
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
+ENV PATH="/usr/local/bin:${PATH}"
 
 RUN \
   addgroup jenkins && \
@@ -29,8 +30,7 @@ RUN \
   rm -rf /var/cache/apk/* && \
   echo "%jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-#USER jenkins
-USER root
+USER jenkins
 
 RUN \
   touch ~/.sudo_as_admin_successful
