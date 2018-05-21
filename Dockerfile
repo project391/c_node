@@ -23,16 +23,20 @@ RUN \
   echo "PermitRootLogin no" >> /etc/ssh/sshd_config && \
   echo "AllowGroups jenkins" >> /etc/ssh/sshd_config
 
-# Comment these lines to disable sudo
+# Comment these lines to disable sudo -- needed
 RUN \
   apk --update add sudo && \
   rm -rf /var/cache/apk/* && \
   echo "%jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-USER jenkins
+#USER jenkins
+USER root
 
 RUN \
   touch ~/.sudo_as_admin_successful
+
+RUN \
+  cd /home/jenkins
 
 WORKDIR /home/jenkins
 
