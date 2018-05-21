@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'node_build 
+    label 'node_build'
   }
   stages {
     stage('Pre-check') {
