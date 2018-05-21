@@ -42,9 +42,9 @@ pipeline {
         success {
           echo 'Test: OK'
         }
-      }
-      cleanup {
-        sh 'pm2 stop all'
+        cleanup {
+          sh 'pm2 stop all'
+        }
       }
     }
   }
