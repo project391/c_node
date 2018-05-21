@@ -15,7 +15,7 @@
     "pm2": "*"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "pm2 start app.js",
     "test": "mocha test/app_test.js"
   },
   "repository": {
