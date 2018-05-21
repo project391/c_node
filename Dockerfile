@@ -7,7 +7,7 @@ RUN \
   rm -rf /var/cache/apk/*
 
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
-ENV PATH="/usr/local/bin:${PATH}"
+#ENV PATH="/usr/local/bin:${PATH}"
 
 RUN \
   addgroup jenkins && \
@@ -20,11 +20,9 @@ RUN \
 
 RUN \
   set -x && \
-  echo "UsePrivilegeSeparation no" >> /etc/ssh/sshd_config && \
   echo "PermitRootLogin no" >> /etc/ssh/sshd_config && \
   echo "AllowGroups jenkins" >> /etc/ssh/sshd_config
 
-# Comment these lines to disable sudo -- needed
 RUN \
   apk --update add sudo && \
   rm -rf /var/cache/apk/* && \

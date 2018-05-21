@@ -5,14 +5,14 @@ pipeline {
   stages {
     stage('Pre-check') {
       steps {
-        sh '/usr/local/bin/npm -v'
+        sh 'npm -v'
       }
       post {
         failure {
           echo 'Build envorinment error: nodejs is missing...'
         }
         success {
-          echo 'Build envorinment: OK '
+          echo 'Build envorinment: OK'
         }
       }
     }
@@ -26,6 +26,24 @@ pipeline {
         }
         success {
           echo 'Build: OK '
+        }
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh 'npm start'
+        sh 'npm test'
+      }
+      post {
+        failure {
+          echo 'Test error...'
+        }
+        success {
+          echo 'Test: OK'
+        }
+        cleanup {
+          #sh 'pm2 stop all'
         }
       }
     }
