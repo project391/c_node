@@ -17,7 +17,7 @@
   "scripts": {
     "start": "pm2 start app.js",
     "test": "mocha test/app_test.js",
-    "stop": "pm2 stop all",
+    "stop": "pm2 stop all"
   },
   "repository": {
     "type": "git",
