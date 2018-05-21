@@ -1,0 +1,31 @@
+{
+  "name": "node_test",
+  "description": "CI test repository: node.js",
+  "version": "1.0.0",
+  "private": true,
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "*",
+    "supertest": "*",
+    "should": "*",
+    "mocha": "*",
+    "pm2": "*"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha test/app_test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/project391/node_test.git"
+  },
+  "author": "project391",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/project391/node_test/issues"
+  },
+  "homepage": "https://github.com/project391/node_test#readme"
+}
